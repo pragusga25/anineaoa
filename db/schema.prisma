@@ -65,10 +65,12 @@ enum TokenType {
 }
 
 model Post {
-  id        Int       @id @default(autoincrement())
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  Comment   Comment[]
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  title       String
+  description String?
+  Comment     Comment[]
 }
 
 model Comment {
