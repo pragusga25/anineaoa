@@ -1,23 +1,12 @@
-import { useRouter, BlitzPage } from "blitz"
 import Layout from "app/core/layouts/Layout"
-import { LoginForm } from "app/auth/components/LoginForm"
+import { BlitzPage } from "blitz"
+import React from "react"
+import AuthForm from "../components/AuthForm"
 
-const LoginPage: BlitzPage = () => {
-  const router = useRouter()
+const LoginPage: BlitzPage = () => <AuthForm type="login" />
 
-  return (
-    <div>
-      <LoginForm
-        onSuccess={() => {
-          const next = router.query.next ? decodeURIComponent(router.query.next as string) : "/"
-          router.push(next)
-        }}
-      />
-    </div>
-  )
-}
-
+LoginPage.suppressFirstRenderFlicker = true
 LoginPage.redirectAuthenticatedTo = "/"
-LoginPage.getLayout = (page) => <Layout title="Log In">{page}</Layout>
+LoginPage.getLayout = (page) => <Layout fromLogin={true}>{page}</Layout>
 
 export default LoginPage

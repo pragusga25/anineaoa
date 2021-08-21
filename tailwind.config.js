@@ -4,7 +4,11 @@ module.exports = {
   purge: ["{pages,app}/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        "h-98": "28rem",
+      },
+    },
   },
   variants: {
     extend: {},

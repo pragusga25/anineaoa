@@ -20,5 +20,14 @@
     "tsBuildInfoFile": ".tsbuildinfo"
   },
   "exclude": ["node_modules", "**/*.e2e.ts", "cypress"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "app/pages/index.testx.tsxx",
+    "app/pages/index.tsxa",
+    "app/pages/index.test.tsxa",
+    "app/auth/pages/login.tsxa",
+    "app/auth/pages/signup.tsx.bak"
+  ]
 }
