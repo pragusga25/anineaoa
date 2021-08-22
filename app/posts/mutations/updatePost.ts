@@ -4,7 +4,8 @@ import { z } from "zod"
 
 const UpdatePost = z.object({
   id: z.number(),
-  name: z.string(),
+  title: z.string().min(1).max(100),
+  description: z.string(),
 })
 
 export default resolver.pipe(

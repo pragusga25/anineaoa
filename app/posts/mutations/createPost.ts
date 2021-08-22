@@ -3,7 +3,8 @@ import db from "db"
 import { z } from "zod"
 
 const CreatePost = z.object({
-  name: z.string(),
+  title: z.string().min(1).max(100),
+  description: z.string(),
 })
 
 export default resolver.pipe(resolver.zod(CreatePost), resolver.authorize(), async (input) => {
