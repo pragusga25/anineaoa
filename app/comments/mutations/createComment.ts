@@ -3,7 +3,9 @@ import db from "db"
 import { z } from "zod"
 
 const CreateComment = z.object({
-  name: z.string(),
+  content: z.string().min(1).max(300),
+  postId: z.number().min(1),
+  userId: z.number().min(1),
 })
 
 export default resolver.pipe(resolver.zod(CreateComment), resolver.authorize(), async (input) => {
